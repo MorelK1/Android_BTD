@@ -25,7 +25,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button selectBtn, predictBtn;
+    Button selectBtn, predictBtn, homeBtn;
     TextView result;
     ImageView imageView;
     Bitmap bitmap;
@@ -43,8 +43,19 @@ public class MainActivity extends AppCompatActivity {
 
         selectBtn = findViewById(R.id.selectBtn);
         predictBtn = findViewById(R.id.predictBtn);
+        homeBtn = findViewById(R.id.home);
         result = findViewById(R.id.result);
         imageView = findViewById(R.id.imageView);
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Home.class);
+
+                // Démarrer l'activité destination
+                startActivity(intent);
+            }
+        });
 
         selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
